@@ -40,6 +40,10 @@ class OfferController extends Controller
         $bulletin->status_id = 2;
         $bulletin->save();
 
+        Offer::where('bulletin_id',$offer->bulletin_id)
+            ->where('offer_id', '!=', $offer->offer_id)
+            ->update(['status_id' => 3]);
+
         return redirect()->route('bulletin.show', [$offer->bulletin_id]);
     }
 }
