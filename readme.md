@@ -14,5 +14,7 @@
 
 ### Config
 config db connection
+
 > php artisan migrate
+
 > php artisan db:seed
